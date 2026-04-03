@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APD Painting Services | North Shore Chicago Painter</title>
+<meta name="description" content="APD Painting Services — trusted interior &amp; exterior painting on Chicago's North Shore since 1994. Serving Highland Park, Deerfield, Northbrook, Lake Forest, Glenview &amp; more. Free estimates.">
+<meta property="og:title" content="APD Painting Services | North Shore Chicago Painter">
+<meta property="og:description" content="Quality interior &amp; exterior painting serving Chicago's North Shore suburbs since 1994. Fully insured, fair pricing, free estimates.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230a0a0a'/><text x='16' y='22' text-anchor='middle' font-family='serif' font-size='16' font-weight='bold' fill='%23C9A96E'>A</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" as="style">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --bg: #0a0a0a;
+    --bg-lighter: #141414;
+    --dark: #f0ece4;
+    --warm: #a89e90;
+    --text: #c4bfb6;
+    --light-text: #8a8478;
+    --card-bg: #161616;
+    --card-border: rgba(255,255,255,0.06);
+    --accent: #C9A96E;
+    --r1: #FF6B6B;
+    --r2: #FFA94D;
+    --r3: #FFD43B;
+    --r4: #69DB7C;
+    --r5: #4DABF7;
+    --r6: #9775FA;
+    --rainbow: linear-gradient(90deg, #FF6B6B, #FFA94D, #FFD43B, #69DB7C, #4DABF7, #9775FA);
+    --rainbow-text: linear-gradient(90deg, #FF6B6B, #FFA94D, #FFD43B, #69DB7C, #4DABF7, #9775FA);
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* Skip to content */
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 16px;
+    z-index: 200;
+    padding: 12px 24px;
+    background: var(--accent);
+    color: #0a0a0a;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 0 0 4px 4px;
+    transition: top 0.2s;
+  }
+  .skip-link:focus { top: 0; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 24px 48px;
+    transition: all 0.4s;
+  }
+  nav.scrolled {
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 24px;
+    color: var(--dark);
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo .insured-badge {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    background: var(--rainbow);
+    color: #fff;
+    border-radius: 3px;
+  }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a {
+    color: var(--light-text); text-decoration: none;
+    font-size: 13px; font-weight: 400;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--dark); }
+
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 110;
+    background: none;
+    border: none;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--dark);
+    transition: all 0.3s;
+    border-radius: 1px;
+  }
+  .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .hamburger.active span:nth-child(2) { opacity: 0; }
+  .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+  /* Mobile menu overlay */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(10,10,10,0.98);
+    backdrop-filter: blur(20px);
+    z-index: 99;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    color: var(--dark);
+    text-decoration: none;
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    transition: color 0.3s;
+  }
+  .mobile-menu a:hover { color: var(--r5); }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    overflow: hidden;
+  }
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 160px 64px 80px 64px;
+  }
+  .hero-label {
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--r5); font-weight: 500; margin-bottom: 24px;
+  }
+  .hero-text h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(38px, 6vw, 72px);
+    line-height: 1.1;
+    margin-bottom: 28px;
+    background: var(--rainbow-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-text p {
+    font-size: 15px; line-height: 1.8;
+    color: var(--light-text); font-weight: 300;
+    max-width: 440px; margin-bottom: 40px;
+  }
+  .hero-quote {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px; line-height: 1.5;
+    color: var(--warm);
+    font-style: italic;
+    border-left: 3px solid var(--r5);
+    padding-left: 24px;
+    margin-bottom: 40px;
+    max-width: 440px;
+    border-image: var(--rainbow) 1;
+  }
+  .btn-primary {
+    display: inline-block;
+    padding: 16px 44px;
+    background: var(--rainbow);
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px; letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s;
+    align-self: flex-start;
+    border-radius: 2px;
+  }
+  .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+  .hero-image {
+    position: relative;
+    background: #1a1a1a;
+  }
+  .hero-image-inner {
+    position: absolute;
+    inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--warm);
+  }
+  .hero-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 40%;
+    background: linear-gradient(to top, var(--bg), transparent);
+  }
+
+  /* Accent stripe */
+  .rainbow-stripe {
+    height: 4px;
+    background: var(--rainbow);
+    width: 100%;
+  }
+
+  /* Stats bar */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .stat {
+    padding: 40px 48px;
+    border-right: 1px solid rgba(255,255,255,0.04);
+    text-align: center;
+  }
+  .stat:last-child { border-right: none; }
+  .stat-number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    background: var(--rainbow-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--light-text);
+  }
+
+  /* About */
+  .about {
+    padding: 120px 64px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .about h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 38px; color: var(--dark);
+    margin-bottom: 12px;
+  }
+  .about .accent-line {
+    width: 48px; height: 3px;
+    background: var(--rainbow);
+    margin-bottom: 40px;
+    border-radius: 2px;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    margin-top: 40px;
+  }
+  .about p {
+    font-size: 15px; line-height: 1.9;
+    color: var(--text); font-weight: 300;
+    margin-bottom: 20px;
+  }
+  .about-blockquote {
+    font-family: 'DM Serif Display', serif;
+    font-size: 24px; line-height: 1.5;
+    color: var(--dark);
+    padding-left: 32px;
+    border-left: 3px solid var(--r5);
+    border-image: var(--rainbow) 1;
+    font-style: italic;
+    align-self: center;
+  }
+  .about-blockquote cite {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    color: var(--light-text);
+    margin-top: 12px;
+    letter-spacing: 1px;
+  }
+
+  /* Approach section */
+  .approach {
+    padding: 100px 64px;
+    background: var(--bg-lighter);
+    border-top: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .approach-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .approach h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 38px; color: var(--dark);
+    margin-bottom: 12px;
+  }
+  .approach .accent-line {
+    width: 48px; height: 3px;
+    background: var(--rainbow);
+    margin-bottom: 32px;
+    border-radius: 2px;
+  }
+  .approach p {
+    font-size: 15px; line-height: 1.9;
+    color: var(--text); font-weight: 300;
+    margin-bottom: 20px;
+  }
+  .approach-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+    padding: 36px;
+  }
+  .approach-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px; color: var(--dark);
+    margin-bottom: 16px;
+  }
+  .approach-card p {
+    font-size: 14px; line-height: 1.8;
+    color: var(--text); font-weight: 300;
+    margin-bottom: 0;
+  }
+  .approach-card + .approach-card { margin-top: 24px; }
+
+  /* Services */
+  .services {
+    padding: 100px 48px;
+    background: var(--bg);
+  }
+  .services-header {
+    text-align: center; margin-bottom: 60px;
+  }
+  .services-header h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 38px; margin-bottom: 8px;
+    color: var(--dark);
+  }
+  .services-header p {
+    font-size: 14px; color: var(--warm); font-weight: 300;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .svc-card {
+    padding: 48px 36px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    transition: all 0.3s;
+    border-radius: 4px;
+  }
+  .svc-card:hover {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(77,171,247,0.3);
+  }
+  .svc-card:nth-child(1) .svc-icon { border-color: var(--r1); color: var(--r1); }
+  .svc-card:nth-child(2) .svc-icon { border-color: var(--r2); color: var(--r2); }
+  .svc-card:nth-child(3) .svc-icon { border-color: var(--r3); color: var(--r3); }
+  .svc-card:nth-child(4) .svc-icon { border-color: var(--r4); color: var(--r4); }
+  .svc-card:nth-child(5) .svc-icon { border-color: var(--r5); color: var(--r5); }
+  .svc-card:nth-child(6) .svc-icon { border-color: var(--r6); color: var(--r6); }
+  .svc-icon {
+    width: 40px; height: 40px;
+    border: 1px solid var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--accent);
+    margin-bottom: 24px;
+    border-radius: 2px;
+  }
+  .svc-icon svg { width: 20px; height: 20px; }
+  .svc-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px; margin-bottom: 12px;
+    color: var(--dark);
+  }
+  .svc-card p {
+    font-size: 14px; line-height: 1.7;
+    color: var(--text); font-weight: 300;
+  }
+
+  /* Service Area */
+  .service-area {
+    padding: 100px 48px;
+    background: var(--bg-lighter);
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+  .service-area-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .service-area h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 38px;
+    color: var(--dark);
+    margin-bottom: 24px;
+  }
+  .service-area p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text);
+    font-weight: 300;
+  }
+
+  /* Testimonials */
+  .testimonials {
+    padding: 120px 48px;
+    background: var(--bg-lighter);
+  }
+  .testimonials-header {
+    text-align: center; margin-bottom: 60px;
+  }
+  .testimonials-header h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 38px; color: var(--dark);
+    margin-bottom: 8px;
+  }
+  .testimonials-header p {
+    font-size: 14px; color: var(--light-text); font-weight: 300;
+  }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .testimonial-card {
+    padding: 36px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+    position: relative;
+  }
+  .testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 4px 4px 0 0;
+  }
+  .testimonial-card:nth-child(1)::before { background: var(--r1); }
+  .testimonial-card:nth-child(2)::before { background: var(--r2); }
+  .testimonial-card:nth-child(3)::before { background: var(--r3); }
+  .testimonial-card:nth-child(4)::before { background: var(--r4); }
+  .testimonial-stars {
+    color: #FFD43B;
+    font-size: 14px;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+  }
+  .testimonial-text {
+    font-size: 14px; line-height: 1.8;
+    color: var(--text); font-weight: 300;
+    font-style: italic;
+    margin-bottom: 16px;
+  }
+  .testimonial-author {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--dark);
+    letter-spacing: 0.5px;
+  }
+
+  /* Gallery */
+  .gallery { padding: 120px 48px; }
+  .gallery-header {
+    text-align: center; margin-bottom: 48px;
+  }
+  .gallery-header h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 38px; color: var(--dark);
+  }
+  .gallery-scroll {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .gallery-item {
+    aspect-ratio: 4/3;
+    background: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--warm);
+    transition: transform 0.4s;
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+  }
+  .gallery-item:hover { transform: translateY(-4px); }
+
+  /* Contact */
+  .contact {
+    padding: 120px 48px;
+    background: var(--bg);
+    border-top: 1px solid rgba(255,255,255,0.04);
+    text-align: center;
+  }
+  .contact h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 44px; color: var(--dark);
+    margin-bottom: 16px;
+  }
+  .contact > p {
+    font-size: 14px; color: var(--warm);
+    font-weight: 300; margin-bottom: 48px;
+  }
+  .contact-links {
+    display: flex; justify-content: center; gap: 60px;
+    flex-wrap: wrap;
+  }
+  .cl-item { text-align: center; }
+  .cl-label {
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--r5); margin-bottom: 12px;
+  }
+  .cl-item a {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px; color: var(--dark);
+    text-decoration: none; transition: color 0.3s;
+  }
+  .cl-item a:hover { color: var(--r5); }
+
+  footer {
+    padding: 28px 48px;
+    text-align: center;
+    font-size: 12px; color: var(--warm);
+    background: var(--bg);
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 20px 24px; }
+    .hamburger { display: flex; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-text { padding: 120px 24px 40px; }
+    .hero-quote { font-size: 18px; margin-bottom: 28px; }
+    .hero-image { min-height: 50vh; }
+    .stats { grid-template-columns: repeat(3, 1fr); }
+    .stat { padding: 24px 16px; }
+    .stat-number { font-size: 28px; }
+    .about { padding: 80px 24px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-blockquote { font-size: 20px; }
+    .approach { padding: 80px 24px; }
+    .approach-inner { grid-template-columns: 1fr; gap: 40px; }
+    .services { padding: 80px 24px; }
+    .services-grid { grid-template-columns: 1fr; gap: 16px; }
+    .service-area { padding: 80px 24px; }
+    .testimonials { padding: 80px 24px; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .gallery { padding: 80px 24px; }
+    .gallery-scroll { grid-template-columns: 1fr; }
+    .contact { padding: 80px 24px; }
+    .contact-links { gap: 32px; }
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <div class="logo">APD Painting Services <span class="insured-badge">Fully Insured</span></div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#approach">Approach</a>
+    <a href="#services">Services</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#work">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <a href="#about">About</a>
+  <a href="#approach">Approach</a>
+  <a href="#services">Services</a>
+  <a href="#testimonials">Reviews</a>
+  <a href="#work">Portfolio</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<main id="main">
+<div class="hero">
+  <div class="hero-text">
+    <div class="hero-label">Serving Chicagoland Since 1994</div>
+    <h1>APD Painting Services</h1>
+    <p>Servicing the Chicagoland area for over 32 years of quality interior and exterior painting. Fully insured for mutual protection and peace of mind on every project. Contact for a free estimate!</p>
+    <div class="hero-quote">"I show up when I say I will. I typically come prepared with everything I need and don't take long lunches or disappear to the paint store. And I'm usually home in time to be with my family!"</div>
+    <a href="#contact" class="btn-primary">Get a Free Estimate</a>
+  </div>
+  <div class="hero-image" aria-hidden="true">
+    <div class="hero-image-inner">Hero Image</div>
+  </div>
+</div>
+
+<div class="rainbow-stripe"></div>
+
+<div class="stats">
+  <div class="stat">
+    <div class="stat-number">32+</div>
+    <div class="stat-label">Years Experience</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">1000+</div>
+    <div class="stat-label">Projects Completed</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">100%</div>
+    <div class="stat-label">Fully Insured</div>
+  </div>
+</div>
+
+<section id="about" class="about">
+  <h2>About APD Painting Services</h2>
+  <div class="accent-line"></div>
+  <div class="about-grid">
+    <div>
+      <p>APD Painting Services has been a trusted choice for homeowners across Chicagoland since 1994. Owner Anthony "Tony" Portnoy brings hands-on expertise, efficiency and personal commitment to every project.</p>
+      <p>A native of the north suburbs, being the only child of an artist father and interior decorator mother gives him a unique perspective on color and design. Although he has a background in marketing and communications, painting has been a constant his entire adult life.</p>
+      <p>Tony works primarily in the North Shore and Northwest suburbs, gravitating toward Benjamin Moore and Sherwin Williams products. While tackling mostly residential work, he occasionally takes on unique or commercial projects.</p>
+      <p>Skilled, fully insured and known for fair, honest pricing, he treats every home as if it were his own.</p>
+      <p>With over 32 years of experience, Tony has built a loyal clientele through fair pricing and quality work that speaks for itself.</p>
+    </div>
+    <div>
+      <div class="about-blockquote">
+        "Moving in, moving out or staying in place all deserve a great paint job"
+        <cite>- Tony Portnoy</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rainbow-stripe"></div>
+
+<section id="approach" class="approach">
+  <div class="approach-inner">
+    <div>
+      <h2>The APD Approach</h2>
+      <div class="accent-line"></div>
+      <p>No-nonsense approach from start to finish. Work is completed in a linear fashion with minimal homeowner disruption.</p>
+      <p>(That means I show up on time usually with materials in hand. I hit the ground running and you won't find me running out to the store during work hours unless it's imperative. Same goes for lunch breaks!)</p>
+      <p>I think of peoples' homes as a giant canvas or coloring book! Selecting the right finish not only for aesthetic purposes, but also for the area it will be used in, I.e., durability.</p>
+    </div>
+    <div>
+      <div class="approach-card">
+        <h3>Modern Equipment</h3>
+        <p>In addition to trusted premium products, my equipment (and clothes) may look dirty and gross, but it is properly selected and loaded up for each job and helps aid in efficient and effective workflow. For example, many customers have trepidation that their home will be turned into a construction zone. They often expect dust clouds and noxious fumes. Using modern tools and products such as vacuum sanders and low or zero VOC paints helps alleviate these concerns. Correct brush and roller selection provides a proper finish.</p>
+      </div>
+      <div class="approach-card">
+        <h3>Minimal Disruption</h3>
+        <p>(That means I show up on time usually with materials in hand. I hit the ground running and you won't find me running out to the store during work hours unless it's imperative. Same goes for lunch breaks!)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rainbow-stripe"></div>
+
+<section id="services" class="services">
+  <div class="services-header">
+    <h2>Our Services</h2>
+    <p>Quality painting solutions for Chicagoland homeowners</p>
+  </div>
+  <div class="services-grid">
+    <div class="svc-card">
+      <div class="svc-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 6V4"/><path d="M6 18h12"/></svg></div>
+      <h3>Interior Painting</h3>
+      <p>Full-room transformations with premium paints, expert cutting and invisible seams. From a single accent wall to a whole-home refresh.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <h3>Exterior Painting</h3>
+      <p>Weather-ready coatings that protect beautify and boost curb appeal. Power washing, scraping, sanding and priming provide lasting finishes built to withstand Chicago seasons.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="7" rx="1"/><path d="M2 10h20"/><rect x="5" y="13" width="4" height="8" rx="1"/><rect x="15" y="13" width="4" height="8" rx="1"/></svg></div>
+      <h3>Cabinet &amp; Trim Refinishing</h3>
+      <p>Breathe new life into kitchens, bathroom vanities and built-ins; professional results at a fraction of the replacement cost. Spray-quality finishes on cabinetry; Refresh or refinish doors, windows, casings, crown molding, baseboards and architectural detail.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><path d="M17.5 10.5a2.5 2.5 0 1 1 0 5"/><path d="M8.5 4a2.5 2.5 0 1 0 0 5"/><path d="M5 13a2.5 2.5 0 1 1 0 5"/><circle cx="12" cy="17" r="2.5"/></svg></div>
+      <h3>Color Consultation</h3>
+      <p>Professional guidance on palette selection tailored to your home's architecture, purpose and personal style. Find the perfect shade with confidence!</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 12h16"/><path d="M12 4v8"/></svg></div>
+      <h3>Decks, Fences &amp; Playsets</h3>
+      <p>Washing, staining or sealing helps restore, protect and maintain outdoor wood spaces, including Rainbow Play Systems.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+      <h3>Drywall Repair</h3>
+      <p>Water damage from plumbing leaks or bumps and bruises on walls from everyday living are common issues. Patched, primed and painted to blend seamlessly with your existing walls.</p>
+    </div>
+  </div>
+</section>
+
+<section class="service-area">
+  <div class="service-area-inner">
+    <h2>Service Area</h2>
+    <p>Highland Park, Deerfield, Northbrook, Lake Forest, Glenview, Buffalo Grove, Arlington Heights, Evanston, Skokie, Mundelein, Vernon Hills, Libertyville. Also available for specialty jobs in Chicago and surrounding areas.</p>
+  </div>
+</section>
+
+<section id="testimonials" class="testimonials">
+  <div class="testimonials-header">
+    <h2>What Our Clients Say</h2>
+    <p>Trusted by hundreds of homeowners across Chicagoland</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testimonial-text">"Tony Portnoy is fantastic. Used him several times and his pricing is very fair."</p>
+      <div class="testimonial-author">- Eric Guthman</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testimonial-text">"Always solid work from Tony!"</p>
+      <div class="testimonial-author">- Winfield Cohen</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testimonial-text">"Tony is a great guy, recommend."</p>
+      <div class="testimonial-author">- Michael Drumke</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testimonial-text">"Great painter!"</p>
+      <div class="testimonial-author">- Mike Wood</div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="gallery">
+  <div class="gallery-header">
+    <h2>Portfolio</h2>
+  </div>
+  <div class="gallery-scroll">
+    <div class="gallery-item">Project 01</div>
+    <div class="gallery-item">Project 02</div>
+    <div class="gallery-item">Project 03</div>
+    <div class="gallery-item">Project 04</div>
+    <div class="gallery-item">Project 05</div>
+    <div class="gallery-item">Project 06</div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Get a Free Estimate</h2>
+  <p>Contact Tony directly for a free estimate. No forms, no runaround.</p>
+  <div class="contact-links">
+    <div class="cl-item">
+      <div class="cl-label">Phone</div>
+      <a href="tel:+18475071339">847.507.1339</a>
+    </div>
+    <div class="cl-item">
+      <div class="cl-label">Email</div>
+      <a href="mailto:tonyportnoy@yahoo.com">tonyportnoy@yahoo.com</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>&copy; 2026 APD Painting Services. All rights reserved.</footer>
+
+<script>
+  // Scroll nav
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  // Close menu on link click
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
+</body>
+</html>
